@@ -1,0 +1,99 @@
+th1 (n, from, inter1, inter2, to)
+th2 (n-2, from, inter2, to, inter1) 1342
+th3 (n-2, inter1, from, inter2, to) 2134
+
+structure: 
+static void towerOfHanoi(int n, char from, char inter1,char inter2, char to)
+{
+if (n == 0)
+    return;
+if (n == 1)
+    {
+    System.out.println("Move disk " + n + " from rod " + from + " to rod " + to);
+    return;
+    }
+
+towerOfHanoi(n-2,from, inter2, to, inter1);
+System.out.println("Move Disc " + (n - 1)+ " From Rod " + from + " to rod " + inter2);
+System.out.println("Move disk " + n +" from rod " + from +" to rod " + to);
+System.out.println("Move Disc " + (n - 1)+ " From Rod " + inter2 + " to rod " + to);
+towerOfHanoi(n-2, inter1, from, inter2,to);
+}
+
+n = 4, 'A', 'B', 'C', 'D'
+
+th1(4, 'A', 'B', 'C', 'D')
+	{
+	if(n == 0)
+		{
+		false
+		}
+	if(n == 1)
+		{
+		false
+		}
+	th2(2, A, C, D, B)
+		{
+		if(n == 0)
+			{
+			false
+			}
+		if(n == 1)
+			{
+			false
+			}
+		th2(0, A, D, B, C) returned
+			{
+			if n == 0
+				{
+				true
+				return
+				}
+			}
+		print 2-1 from - inter2 / 1 A - D
+		print 2 from - to / 2 A - B
+		print 2-1 inter2 - to / 1 D - B
+		th3(0, C, A, D, B) returned
+			{
+			if n == 0
+				{
+				true
+				return
+				}
+			}
+		}
+	print 4-1 from - inter2 / 3 A - C
+	print 4 from - to / 4 A - D
+	print 4-1 inter2 - to / 3 C - D
+	th3(2, B, A, C, D)
+		{
+		if(n == 0)
+			{
+			false
+			}
+		if(n == 1)
+			{
+			false
+			}
+		th2(0, A, D, B, C) returned
+			{
+			if n == 0
+				{
+				true
+				return
+				}
+			}
+		print 2-1 from - inter2 / 1 B - C
+		print 2 from - to / 2 B - D
+		print 2-1 inter2 - to / 1 C - D
+		th3(0, C, A, D, B) returned
+			{
+			if n == 0
+				{
+				true
+				return
+				}
+			}
+		}
+	}
+	
